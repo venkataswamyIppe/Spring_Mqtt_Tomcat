@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee 
+		 http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+         version="3.1">
+  <display-name>Archetype Created Web Application</display-name>
+	<servlet>
+		<servlet-name>dispatcher</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>dispatcher</servlet-name>
+		<url-pattern>/</url-pattern>
+	</servlet-mapping>
+	<!-- error-code related error pages -->
+		<error-page>
+		<error-code>404</error-code>
+		<location>/WEB-INF/views/error1.jsp</location>
+		</error-page>
+		<!-- error-code related error pages -->
+		<error-page>
+		<error-code>400</error-code>
+		<location>/WEB-INF/views/error2.jsp</location>
+		</error-page>
+		<!-- error-code related error pages -->
+		<error-page>
+		<error-code>500</error-code>
+		<location>/WEB-INF/views/error3.jsp</location>
+		</error-page>
+	<listener>
+        <listener-class>
+            org.springframework.web.context.ContextLoaderListener
+        </listener-class>
+    </listener>
+	<context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>classpath:applicationContext.xml</param-value>
+    </context-param>
+</web-app>
